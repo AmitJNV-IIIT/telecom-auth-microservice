@@ -1,0 +1,72 @@
+amazon:
+  aws:
+
+    region: us-east-1
+    dynamodb:
+      endpoint: https://dynamodb.us-east-1.amazonaws.com
+
+
+spring:
+  cache:
+    type: redis
+  redis:
+    host: redis-service-auth
+#    host: 34.227.33.95
+#    host: localhost
+    port: 6379
+  application:
+    name: AUTH-SERVICE
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: denisramper@gmail.com
+    password: xozi zwmt hxwi mzoa
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+#SNS configuration
+aws:
+  sns:
+    topic: ExcitelNotifications
+    arn: arn:aws:sns:us-east-1:832215930943:ExcitelNotifications
+    sms:
+      data:
+        type: String
+      type:
+        value: Promotional
+
+
+# Server Configuration
+server:
+  port: 8086
+  tomcat:
+    keep-alive-timeout: 30000 # 30 seconds
+    threads:
+      max: 20
+  connection-timeout: 5000 # 5 seconds
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+        data:
+          redis: DEBUG
+
+SECRET-KEY: afafasfafafasfasfasfafacasdasfasxASFACASDFACASDFASFASFDAFASFASDAADSCSDFADCVSGCFVADXCcadwavfsfarvf
+pass: password
+AUTH_TOKEN: 37f9033294230580620a92c4d6ece9c9
+secretKey: 00112233445566778899AABBCCDDEEFF
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+
+
